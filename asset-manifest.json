@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/address-book/static/css/main.c5989eae.css",
+    "main.js": "/address-book/static/js/main.4925c961.js",
+    "static/js/787.6721cdb3.chunk.js": "/address-book/static/js/787.6721cdb3.chunk.js",
+    "index.html": "/address-book/index.html",
+    "main.c5989eae.css.map": "/address-book/static/css/main.c5989eae.css.map",
+    "main.4925c961.js.map": "/address-book/static/js/main.4925c961.js.map",
+    "787.6721cdb3.chunk.js.map": "/address-book/static/js/787.6721cdb3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c5989eae.css",
+    "static/js/main.4925c961.js"
+  ]
+}
