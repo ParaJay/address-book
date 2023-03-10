@@ -36,3 +36,60 @@
     transform: rotate(360deg);
   }
 }
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.col-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.bordered {
+    border: solid 1px;
+}
+
+.dropdown-content {
+    visibility: hidden;
+    /* position: absolute; */
+    text-align: center
+}
+
+.add-btn {
+    border-radius: 100%;
+    background-color: yellow;
+    text-align: center;
+    font-size: larger;
+    width: 42px;
+    height: 42px;
+    margin: 6px 6px;
+}
+
+.add-btn:hover .dropdown-content, .dropdown-content:hover .dropdown-content {
+    display: flex;
+    visibility: visible;
+    flex-direction: column;
+}
+
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.right {
+    margin-left: auto;
+}
+
+.left {
+    margin-right: auto;
+}
+
+.bottom {
+    margin-top: 75vh;
+    margin-bottom: auto;
+}
