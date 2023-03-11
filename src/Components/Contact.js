@@ -1,5 +1,5 @@
 const Contact = (props) => {
-    return <p onClick={props.onView} className="bordered contact">{props.text}</p>
+    return <div onClick={props.onView}><p className="bordered rounded contact">{props.text}</p></div>
 }
 
 export default Contact;
