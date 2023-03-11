@@ -82,14 +82,59 @@
 }
 
 .right {
-    margin-left: auto;
+    right: 0;
 }
 
 .left {
-    margin-right: auto;
+    left: 0;
 }
 
 .bottom {
-    margin-top: 75vh;
+    bottom: 0;
+}
+
+.fixed, .grounded, .anch {
+    position: fixed;
+}
+
+.grounded {
+    margin-top: 50%;
     margin-bottom: auto;
+}
+
+.anch {
+    bottom: 0;
+    right: 0;
+}
+
+.pushup-menu {
+    bottom: 7%;
+    right: 0;
+}
+
+.footer {
+    bottom: 12%;
+    right: 0;
+    height: 12%;
+    width: 100%;
+}
+
+.under-border {
+    border-bottom: solid 1px;
+}
+
+.overflow {
+    overflow: scroll;
+    height: 83vh;
+}
+
+.contact {
+    padding: 6px 6px;
+    margin-right: 16px;
+    left: 0%;
+}
+
+.contact-header {
+    background-color: rgb(128, 128, 128);
+    color: white;
 }
