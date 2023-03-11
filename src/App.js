@@ -1,7 +1,7 @@
 import './App.css';
 import { useState } from "react";
 import ContactsList from './Components/ContactsList';
-import { randomUUID } from './utils';
+import { names, Random, randomUUID } from './utils';
 import ContactCreator from './Components/ContactCreator';
 import ContactView from './Components/ContactView';
 
@@ -42,8 +42,6 @@ function App() {
     const addWholeContact = (contact) => {
         if(isContact(contact)) return;
 
-        console.log("adding contact");
-
         let c = [...contacts];
         c.push(contact);
         setContacts(c);
@@ -58,6 +56,41 @@ function App() {
     const displayContent = (e) => {
         e.stopPropagation();
         document.getElementsByClassName("dropdown-content")[0].style.visibility = "visible";
+    }
+
+    const randomName = (arr=names) => {
+        return new Random().fromArray(arr);
+    }
+
+    const randomNumber = () => {
+        let res = "";
+
+        while(res.length < 11) {
+            res += (new Random().nextInt(9));
+        }
+
+        return res;
+    }
+
+    const fake = (e, amt) => {
+        let c = [...contacts];
+
+        for(let i = 0; i < 100; i++) {
+            let firstname = randomName().split(" ")[0];
+            let secondname = randomName(randomName().split(" "));
+
+            let contact = {
+                name: firstname + " " + secondname,
+                number: randomNumber(),
+                uuid: randomUUID()
+            }
+            
+            c.push(contact);
+
+        }
+
+        setContacts(c);
+       
     }
 
     const universalClick = () => {
@@ -79,21 +112,23 @@ function App() {
             <div className="wrapper">
                 <nav>
                     {CC}
-                    <h2>Contacts</h2>
+                    <h2 className="under-border">Contacts</h2>
+                    {/* <button onClick={fake}>fake</button> */}
                     {
                     }
                 </nav>
 
-                <ContactsList contacts={contacts} onDelete={removeContact} onView={setView}></ContactsList>
-
-                <div className="col-wrapper bottom right">
-                    <div className="dropdown-content">
-                        <button onClick={() => setIsCreating(true)}>createContact</button>
-                    </div>
-
-                    <button className="add-btn" onClick={displayContent}><b>+</b></button>                    
+                <div className="overflow under-border">
+                    <ContactsList contacts={contacts} onDelete={removeContact} onView={setView}></ContactsList>
                 </div>
-            </div>            
+
+                <div>
+                    <button className="add-btn bottom right fixed" onClick={displayContent}><b>+</b></button>
+                    <button className="dropdown-content pushup-menu fixed" onClick={() => setIsCreating(true)}>createContact</button>
+                    <button className="left bottom fixed" onClick={fake}><b>Fake</b></button>
+                </div>
+            </div>
+            
         </div>
     );
 }
